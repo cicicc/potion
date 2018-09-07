@@ -15,9 +15,10 @@
  */
 package cn.love.potion.test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Random;
+import org.junit.Test;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @author cicicc
@@ -25,7 +26,11 @@ import java.util.Random;
  */
 public class ArrayTest {
 
+    public static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 
+    public static String formatDate(Date date) {
+        return dateFormat.format(date);
+    }
 
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -38,12 +43,26 @@ public class ArrayTest {
             Integer i = iterator.next();
             if (i % 2 == 0) {
                 //说明为偶数,进行删除
-//                list.remove(i);
                 iterator.remove();
             }
         }
         for (int j : list) {
             System.out.println(j);
+        }
+
+    }
+
+    @Test
+    public void errorRemove(){
+        List<Integer> list = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 1000; i++) {
+            list.add(random.nextInt(10000));
+        }
+        for (Integer i : list) {
+            if (i % 2 == 0) {
+                list.remove(i);
+            }
         }
     }
 }
