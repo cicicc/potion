@@ -19,14 +19,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
+ * 关于页面的Controller
  * @author cicicc
  * @since 0.0.1
  */
 @Controller
-public class IndexController {
-    @RequestMapping({"/","/index"})
-    public String index(){
-        return "index";
+public class AboutController {
+
+    @RequestMapping("/single")
+    public String toBlog() {
+        return "single";
     }
 
 }

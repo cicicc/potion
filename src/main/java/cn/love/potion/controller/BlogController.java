@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @author cicicc
- * @since 0.0.1
+ * @since 首页状态栏的博客
  */
 @Controller
-public class IndexController {
-    @RequestMapping({"/","/index"})
-    public String index(){
-        return "index";
-    }
+public class BlogController {
 
+    @RequestMapping("/archive")
+    public String toBlog() {
+        return "archive";
+    }
 }

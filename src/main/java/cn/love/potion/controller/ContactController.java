@@ -19,14 +19,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
+ * 和我们进行联系页面
  * @author cicicc
  * @since 0.0.1
  */
 @Controller
-public class IndexController {
-    @RequestMapping({"/","/index"})
-    public String index(){
-        return "index";
-    }
+public class ContactController {
 
+    @RequestMapping("/contact")
+    public String toBlog() {
+        return "contact";
+    }
 }
